@@ -3,6 +3,7 @@ package com.user.codeforcodeuser.controller;
 import com.user.codeforcodeuser.common.dto.PageDto;
 import com.user.codeforcodeuser.common.dto.ResponseDto;
 import com.user.codeforcodeuser.dto.request.DeleteRequest;
+import com.user.codeforcodeuser.dto.request.LoginRequest;
 import com.user.codeforcodeuser.dto.request.RegisterRequest;
 import com.user.codeforcodeuser.dto.request.SearchRequest;
 import com.user.codeforcodeuser.service.UserService;
@@ -28,6 +29,13 @@ public class UserApiController {
         var response = userService.register(request);
 
         return ResponseDto.created(response);
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest request){
+        var response = userService.login(request);
+
+        return ResponseDto.ok(response);
     }
 
     @GetMapping("/get")
