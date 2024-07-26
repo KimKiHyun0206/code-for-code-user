@@ -2,10 +2,10 @@ package com.user.codeforcodeuser.controller;
 
 import com.user.codeforcodeuser.common.dto.PageDto;
 import com.user.codeforcodeuser.common.dto.ResponseDto;
-import com.user.codeforcodeuser.dto.request.DeleteRequest;
-import com.user.codeforcodeuser.dto.request.LoginRequest;
-import com.user.codeforcodeuser.dto.request.RegisterRequest;
-import com.user.codeforcodeuser.dto.request.SearchRequest;
+import com.user.codeforcodeuser.dto.request.UserDeleteRequest;
+import com.user.codeforcodeuser.dto.request.UserLoginRequest;
+import com.user.codeforcodeuser.dto.request.UserRegisterRequest;
+import com.user.codeforcodeuser.dto.request.UserSearchRequest;
 import com.user.codeforcodeuser.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,21 +25,21 @@ public class UserApiController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<?> register(@RequestBody UserRegisterRequest request) {
         var response = userService.register(request);
 
         return ResponseDto.created(response);
     }
 
     @GetMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request){
+    public ResponseEntity<?> login(@RequestBody UserLoginRequest request){
         var response = userService.login(request);
 
         return ResponseDto.ok(response);
     }
 
     @GetMapping("/get")
-    public ResponseEntity<?> get(@RequestBody SearchRequest request) {
+    public ResponseEntity<?> get(@RequestBody UserSearchRequest request) {
         var response = userService.get(request);
 
         return ResponseDto.ok(response);
@@ -53,7 +53,7 @@ public class UserApiController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> delete(DeleteRequest request) {
+    public ResponseEntity<Void> delete(UserDeleteRequest request) {
         if (userService.delete(request)) {
             return ResponseDto.noContent();
         }

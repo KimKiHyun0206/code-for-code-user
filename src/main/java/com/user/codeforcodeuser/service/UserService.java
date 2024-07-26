@@ -1,10 +1,10 @@
 package com.user.codeforcodeuser.service;
 
 import com.user.codeforcodeuser.domain.User;
-import com.user.codeforcodeuser.dto.request.DeleteRequest;
-import com.user.codeforcodeuser.dto.request.LoginRequest;
-import com.user.codeforcodeuser.dto.request.RegisterRequest;
-import com.user.codeforcodeuser.dto.request.SearchRequest;
+import com.user.codeforcodeuser.dto.request.UserDeleteRequest;
+import com.user.codeforcodeuser.dto.request.UserLoginRequest;
+import com.user.codeforcodeuser.dto.request.UserRegisterRequest;
+import com.user.codeforcodeuser.dto.request.UserSearchRequest;
 import com.user.codeforcodeuser.dto.response.UserResponse;
 import com.user.codeforcodeuser.exception.UserNotFoundException;
 import com.user.codeforcodeuser.repository.UserRepository;
@@ -22,7 +22,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     @Transactional
-    public UserResponse register(RegisterRequest request) {
+    public UserResponse register(UserRegisterRequest request) {
         User user = new User(
                 request.getPassword(),
                 request.getNickName()
@@ -34,7 +34,7 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public UserResponse login(LoginRequest request) {
+    public UserResponse login(UserLoginRequest request) {
         try {
             User user = userRepository.findById(request.getId()).orElseThrow(UserNotFoundException::new);
 
@@ -52,7 +52,7 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public UserResponse get(SearchRequest request){
+    public UserResponse get(UserSearchRequest request){
         try {
             User user = userRepository.findById(request.getId()).orElseThrow(UserNotFoundException::new);
 
@@ -73,7 +73,7 @@ public class UserService {
     }
 
     @Transactional
-    public boolean delete(DeleteRequest request){
+    public boolean delete(UserDeleteRequest request){
         try {
             User user = userRepository.findById(request.getId()).orElseThrow(UserNotFoundException::new);
 
