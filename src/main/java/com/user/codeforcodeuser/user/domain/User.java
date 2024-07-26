@@ -1,8 +1,7 @@
-package com.user.codeforcodeuser.domain;
+package com.user.codeforcodeuser.user.domain;
 
 import com.user.codeforcodeuser.common.BaseEntity;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

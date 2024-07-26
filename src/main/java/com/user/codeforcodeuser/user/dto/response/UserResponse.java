@@ -1,6 +1,6 @@
-package com.user.codeforcodeuser.dto.response;
+package com.user.codeforcodeuser.user.dto.response;
 
-import com.user.codeforcodeuser.domain.User;
+import com.user.codeforcodeuser.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

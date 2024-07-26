@@ -1,4 +1,4 @@
-package com.user.codeforcodeuser.dto.request;
+package com.user.codeforcodeuser.user.dto.request;
 
 import lombok.Data;
 

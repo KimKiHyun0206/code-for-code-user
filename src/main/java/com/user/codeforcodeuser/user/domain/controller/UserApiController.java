@@ -1,12 +1,12 @@
-package com.user.codeforcodeuser.controller;
+package com.user.codeforcodeuser.user.domain.controller;
 
 import com.user.codeforcodeuser.common.dto.PageDto;
 import com.user.codeforcodeuser.common.dto.ResponseDto;
-import com.user.codeforcodeuser.dto.request.UserDeleteRequest;
-import com.user.codeforcodeuser.dto.request.UserLoginRequest;
-import com.user.codeforcodeuser.dto.request.UserRegisterRequest;
-import com.user.codeforcodeuser.dto.request.UserSearchRequest;
-import com.user.codeforcodeuser.service.UserService;
+import com.user.codeforcodeuser.user.dto.request.UserDeleteRequest;
+import com.user.codeforcodeuser.user.dto.request.UserLoginRequest;
+import com.user.codeforcodeuser.user.dto.request.UserRegisterRequest;
+import com.user.codeforcodeuser.user.dto.request.UserSearchRequest;
+import com.user.codeforcodeuser.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;

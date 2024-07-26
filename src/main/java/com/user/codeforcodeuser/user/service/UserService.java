@@ -1,13 +1,13 @@
-package com.user.codeforcodeuser.service;
+package com.user.codeforcodeuser.user.service;
 
-import com.user.codeforcodeuser.domain.User;
-import com.user.codeforcodeuser.dto.request.UserDeleteRequest;
-import com.user.codeforcodeuser.dto.request.UserLoginRequest;
-import com.user.codeforcodeuser.dto.request.UserRegisterRequest;
-import com.user.codeforcodeuser.dto.request.UserSearchRequest;
-import com.user.codeforcodeuser.dto.response.UserResponse;
+import com.user.codeforcodeuser.user.domain.User;
+import com.user.codeforcodeuser.user.dto.request.UserDeleteRequest;
+import com.user.codeforcodeuser.user.dto.request.UserLoginRequest;
+import com.user.codeforcodeuser.user.dto.request.UserRegisterRequest;
+import com.user.codeforcodeuser.user.dto.request.UserSearchRequest;
+import com.user.codeforcodeuser.user.dto.response.UserResponse;
 import com.user.codeforcodeuser.exception.UserNotFoundException;
-import com.user.codeforcodeuser.repository.UserRepository;
+import com.user.codeforcodeuser.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
